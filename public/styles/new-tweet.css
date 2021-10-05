@@ -20,9 +20,12 @@
 #tweet-text{
   border: none;
   outline: none;
+  border-bottom-style: solid;
+  border-bottom-color:black;
   background-color: transparent;
-  display: flex;
-  flex-grow:3;
+  width: 100%;
+  resize: none;
+  
 }
 
 
@@ -42,4 +45,9 @@
   font-family: 'Bungee', cursive; 
   background-color: #4056a1;
   color: #FFFFFF;
+}
+
+.redCounter{
+  color:red
+
 }
