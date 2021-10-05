@@ -27,19 +27,21 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   width:100%;
-  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
 
 .container{ 
-  background-color: #f4f1ec;
+    background-color: #f4f1ec;
   display: flex;
   flex-direction: column;
   width: 90%;
   
-  
-  box-sizing: border-box;
 
 }
 
