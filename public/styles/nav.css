@@ -1,0 +1,33 @@
+nav {
+  height: 120px;
+  box-sizing: border-box;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;/* Set the navbar to fixed position */
+  top:0;/* Position the navbar at the top of the page */
+  width:100%;
+  
+}
+
+.nav-logo {
+  font-family: 'Bungee', cursive;
+  margin-left: 1.5em ;
+  font-size: 1.6em;
+}
+
+.nav-parent-columns{
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.5em;
+  align-items: center;
+}
+
+
+.arrow{
+ color:rgb(234, 37, 37)
+}
+
