@@ -1,12 +1,5 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  console.log("it works")
-
-  // const $tweetText = $(".tweet-text");
-  // console.log($tweetText.length)
-
-
-
+ 
   $("#tweet-text").on('input', function(){
     let count = $(this).val().length
     console.log(count);
@@ -19,8 +12,6 @@ $(document).ready(function() {
       $('.bottom-of-form .counter').removeClass("redCounter")
     }
   });
-
- 
 
 });
 
