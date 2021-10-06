@@ -1,6 +1,5 @@
 /* 
 CSS for the tweet container
-
 */
 
 .tweet-container{
@@ -11,19 +10,20 @@ CSS for the tweet container
   margin-top: 2em;
   
 }
+
 /*
 Adding shodow to tweet-container on hover
 */
 .tweet-container:hover{
   box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
 }
+
 /*
 Adds shadow to users handle when hovering over tweet-container
 */
 .tweet-container:hover #user-handel{
   text-shadow: 1px 1px rgba(0, 0, 255, .2);
 }
-
 
 .tweet-header{
   display: flex;
@@ -35,14 +35,22 @@ Adds shadow to users handle when hovering over tweet-container
 }
 
 #icon-and-name{
+  display: flex;
+  align-items: center;
+  
   margin-left: 12px;
 }
+#icon-and-name span{
+  padding-left: 5px;
+}
+
 #user-handel{
+  display: flex;
+  align-items: center;
   font-weight: lighter;
   margin-right: 12px;
   color:rgba(0, 0, 255, .2);
 }
-
 
 .tweet-body{
   display: flex;
@@ -55,6 +63,9 @@ Adds shadow to users handle when hovering over tweet-container
   font-weight: bold;
 }
 
+/*
+Tweet body span is where the contents of tweets are
+*/
 .tweet-body span{
   margin-left: 12px;
 }
@@ -66,11 +77,16 @@ Adds shadow to users handle when hovering over tweet-container
   margin-bottom: 1em;
   padding-right: 10px;
   padding-left: 10px;
+  align-content: center;
 }
 
 .date-tweeted{
+  margin-top: 7px;
+  
   font-size: .8em;
   margin-left: 12px;
+  font-size: 13px;
+
 }
 
 /*
@@ -78,13 +94,14 @@ Container of Icons
 */
 .icon-holder{
   margin-right: 12px;
+  
 }
 /*
 Each indivual icon 
 */
 .icons{
-  
   margin-right: 6px;
+  font-size: 13px;
 }
 
 /*
