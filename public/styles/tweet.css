@@ -1,0 +1,95 @@
+/* 
+CSS for the tweet container
+
+*/
+
+.tweet-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 5px solid black; 
+  margin-top: 2em;
+  
+}
+/*
+Adding shodow to tweet-container on hover
+*/
+.tweet-container:hover{
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
+}
+/*
+Adds shadow to users handle when hovering over tweet-container
+*/
+.tweet-container:hover #user-handel{
+  text-shadow: 1px 1px rgba(0, 0, 255, .2);
+}
+
+
+.tweet-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1em;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#icon-and-name{
+  margin-left: 12px;
+}
+#user-handel{
+  font-weight: lighter;
+  margin-right: 12px;
+  color:rgba(0, 0, 255, .2);
+}
+
+
+.tweet-body{
+  display: flex;
+  width: 98%;
+  margin-top: 2em;
+  align-self: center;
+  padding-bottom: 1em;
+  border-bottom-style: solid;
+  border-bottom-color:black;
+  font-weight: bold;
+}
+
+.tweet-body span{
+  margin-left: 12px;
+}
+
+.tweet-footer{
+  display: flex;
+  justify-content: space-between !important;
+  margin-top: 10px;
+  margin-bottom: 1em;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.date-tweeted{
+  font-size: .8em;
+  margin-left: 12px;
+}
+
+/*
+Container of Icons 
+*/
+.icon-holder{
+  margin-right: 12px;
+}
+/*
+Each indivual icon 
+*/
+.icons{
+  
+  margin-right: 6px;
+}
+
+/*
+Changing color of flag, retweet, and heart icon when hovering over top of them
+*/
+.icons:hover{
+  color:goldenrod
+} 
