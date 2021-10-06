@@ -38,7 +38,7 @@ Adds shadow to users handle when hovering over tweet-container
   display: flex;
   align-items: center;
   
-  margin-left: 12px;
+  margin-left: 12px; 
 }
 #icon-and-name span{
   padding-left: 5px;
