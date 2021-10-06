@@ -13,12 +13,15 @@ nav {
   
 }
 
-
 .nav-logo {
   font-family: 'Bungee', cursive;
   margin-left: 1.5em ;
   font-size: 1.6em;
 }
+
+/*
+nav-parent-columns is a div that holds the "Write a new tweet" in a span and also hold the  Arrow Icon  
+*/
 
 .nav-parent-columns{
   display: flex;
@@ -27,12 +30,36 @@ nav {
   align-items: center;
 }
 
+
+/*
+bold-write is an Id given to word Write to tagret it so its bold 
+*/
+
 #bold-write{
   font-weight: bold;
 }
 
+/*
+Arrow class tragets the arrow Iconn 
+*/
 
-.arrow{
- color:rgb(234, 37, 37)
+.arrow {
+  color:rgb(234, 37, 37);
+  margin-top: 3px;
+  width: 5px;
+  height: 5px;
+  animation: bounce 1s infinite alternate;
 }
+/*
+Animation code for arow bounce
+*/
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
 
