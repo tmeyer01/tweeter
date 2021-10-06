@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -51,13 +52,9 @@
     <main class="container">
        
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
         <form method="post" action="/tweets">
-          <!-- <span class="top-of-form"> -->
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text"></textarea>
-          <!-- </span> -->
-          
           <div class="bottom-of-form">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -68,10 +65,32 @@
 
 
 
+      <section class="tweet-container">
+        <artical class="tweet-header">
+          <div id="icon-and-name">
+            <i class="fas fa-skull-crossbones"></i>
+            <span>username</span>  
+          </div>
+          <span id="user-handel">@SleepyDead</span>
+        </artical>
+        <artical class="tweet-body">
+          <span>happy a new tweet to test font</span>
+        </artical>
+        <artical class="tweet-footer">
+          <span class="date-tweeted">10 days ago</span>
+          <div class="icon-holder">
+            <i class="fas fa-flag icons"></i>
+            <i class="fas fa-retweet icons"></i>
+            <i class="far fa-heart icons"></i>
+          </div>
+        </artical>
+      </section>
+
+
 
     </main>
-
-    
   </body>
   <script src="./scripts/composer-char-counter.js"></script>
 </html>
+
+    
