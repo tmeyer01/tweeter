@@ -2,8 +2,7 @@ $(document).ready(function() {
  
   $("#tweet-text").on('input', function(){
     let count = $(this).val().length
-    console.log(count);
- 
+    
     $('.bottom-of-form .counter').text(140 - count);
 
     if( count > 140){
