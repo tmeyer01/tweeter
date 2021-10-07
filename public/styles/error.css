@@ -1,0 +1,23 @@
+.error-container h4{
+  display: inline;
+  font-weight: 500; 
+}
+
+
+
+.error-container{
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  
+  border: 5px solid rgb(248, 30, 30); 
+  margin-top: 2em;
+  width: 90%;
+  
+}
+
+/* .error-message{ 
+  justify-content: space-around;
+  padding: .5em;
+} */

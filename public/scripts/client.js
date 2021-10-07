@@ -6,6 +6,17 @@
 
 
 $(document).ready(function() {
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   //Function creates new tweet-container and fills it with approrate data from data array object
   const createTweetElement = function(tweetObj) {
     let time = timeago.format(`${tweetObj.created_at}`);
@@ -40,7 +51,7 @@ $(document).ready(function() {
     const $tweetContainer = $('#tweets-container');
     //$tweetContainer.empty()
     for (let item of arrayOfTweet) {
-      console.log('item', item)
+     // console.log('item', item)
       $tweetContainer.prepend(createTweetElement(item));
     }
     
@@ -63,8 +74,35 @@ $(document).ready(function() {
       console.log('error: ', error)
     });
   };
-
+  $(".error-container").hide();
   loadTweets();
+
+ 
+ //function decleration 
+//   $(function () {
+//     function tweetValidation(input)
+    
+//     const $errorContainer = $('.error-container h4')
+//     const $error = $('.error-container')
+
+//       //validation to make sure count is not over 140, or no characters
+//       if(count > 140) {
+//         $("#error-container-no-error").text("<strong>Character count must be less then 140 character</strong>")
+//         // alert("Character count must be less then 140 character");
+//         return;
+//       } 
+//       if (count === 0) {
+//         $("error-container-with-error").append("<strong>Cant not submit blank tweet</strong>")
+        
+//         //alert("Cant not submit blank tweeter");
+//         return;
+//       } 
+
+//  })
+
+
+
+
 
   //Event listener for sumbit button when posting tweet
   $("form").on("submit", function(event) {
@@ -72,19 +110,30 @@ $(document).ready(function() {
   
     //text veriable holds value of from tweet-text id
     const text = $("#tweet-text").val();
+    console.log('text value', text);
     const count = text.length;
     //using escape func. on text to prevent XXS w/ Escaping 
     const safeTextFromUser = escape(text);
 
+    
+    
+    $(".error-container").empty();
+  
     //validation to make sure count is not over 140, or no characters
     if(count > 140) {
-      alert("Character count must be less then 140 character");
+      //console.log('selector', $("#error-container-no-error"))
+      $(".error-container").append("<strong>Character count must be less then 140 character</strong>")
+      $(".error-container").slideDown( function(){})
       return;
     } 
     if (count === 0) {
-      alert("Cant not submit blank tweeter");
-      return;
+      $(".error-container").append("<strong>Cant not submit blank tweet</strong>")
+      $(".error-container").slideDown( function(){})
+      return;  
     } 
+    $(".error-container").slideUp( function(){
+    });
+
       //formating varible into json 
       const tweet = {"text":safeTextFromUser};
       console.log(tweet);
