@@ -6,38 +6,6 @@
 
 
 $(document).ready(function() {
-
-
-  //Event listener for sumbit button when posting tweet
-  $("form").on("submit", function(event) {
-    event.preventDefault();
-    
-    //defining the count from the value entered in from text area with the id of tweet-text
-    let count = $("#tweet-text").val().length
-    
-    //validation to make sure count is not over 140, or no characters
-    if(count > 140) {
-      alert("Character count must be less then 140 character");
-      return;
-    } 
-    if (count === 0) {
-      alert("Cant not submit blank tweeter");
-      return;
-    } 
-
-      const tweet = $(this).serialize();
-      console.log(tweet);
-      $.ajax({
-        type: "POST",
-        url: "/tweets/",
-        datatype: 'json',
-        data: tweet,
-      });
-    
-  });
-
-  
-
   //Function creates new tweet-container and fills it with approrate data from data array object
   const createTweetElement = function(tweetObj) {
     let time = timeago.format(`${tweetObj.created_at}`);
@@ -66,23 +34,29 @@ $(document).ready(function() {
     );
     return $tweet;
   };
-  //fuction that filter through array of tweets and for each item runs creatTweetElment() then appends them to the tweetContainer 
+  
+  //fuction that filter through array of tweets and for each item runs creatTweetElment() then pre-appends (that apending but backwards) them to the tweetContainer 
   const renderTweets = function(arrayOfTweet) {
     const $tweetContainer = $('#tweets-container');
+    //$tweetContainer.empty()
     for (let item of arrayOfTweet) {
-      $tweetContainer.append(createTweetElement(item));
+      console.log('item', item)
+      $tweetContainer.prepend(createTweetElement(item));
     }
+    
   };
 
-
+  //function that loadTweets by mkaing an Ajax request call with a GET method
   const loadTweets = function(){
     let url = 'http://localhost:8080/tweets';
+    
     $.ajax({
       url: url,
       method: "GET"
     })
     .then((result)=>{
-      //console.log('results', results);
+     //console.log('results', result);
+     $("#tweets-container").empty()
       renderTweets(result);
     })
     .catch((error)=>{
@@ -91,5 +65,42 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+//Event listener for sumbit button when posting tweet
+$("form").on("submit", function(event) {
+  event.preventDefault();
+  
+  //defining the count from the value entered in from text area with the id of tweet-text
+  let count = $("#tweet-text").val().length
+  
+  //validation to make sure count is not over 140, or no characters
+  if(count > 140) {
+    alert("Character count must be less then 140 character");
+    return;
+  } 
+  if (count === 0) {
+    alert("Cant not submit blank tweeter");
+    return;
+  } 
+
+    const tweet = $(this).serialize();
+    console.log(tweet);
+    $.ajax({
+      type: "POST",
+      url: "/tweets/",
+      datatype: 'json',
+      data: tweet,
+      success: ()=>{
+       // console.log("HELLO")
+        $("#tweet-text").val("")
+     loadTweets();
+      }
+    });
+    
+});
+
+
+
+
 
 });
