@@ -66,38 +66,48 @@ $(document).ready(function() {
 
   loadTweets();
 
-//Event listener for sumbit button when posting tweet
-$("form").on("submit", function(event) {
-  event.preventDefault();
+  //Event listener for sumbit button when posting tweet
+  $("form").on("submit", function(event) {
+    event.preventDefault();
   
-  //defining the count from the value entered in from text area with the id of tweet-text
-  let count = $("#tweet-text").val().length
-  
-  //validation to make sure count is not over 140, or no characters
-  if(count > 140) {
-    alert("Character count must be less then 140 character");
-    return;
-  } 
-  if (count === 0) {
-    alert("Cant not submit blank tweeter");
-    return;
-  } 
+    //text veriable holds value of from tweet-text id
+    const text = $("#tweet-text").val();
+    const count = text.length;
+    //using escape func. on text to prevent XXS w/ Escaping 
+    const safeTextFromUser = escape(text);
 
-    const tweet = $(this).serialize();
-    console.log(tweet);
-    $.ajax({
-      type: "POST",
-      url: "/tweets/",
-      datatype: 'json',
-      data: tweet,
-      success: ()=>{
-       // console.log("HELLO")
-        $("#tweet-text").val("")
-     loadTweets();
-      }
-    });
+    //validation to make sure count is not over 140, or no characters
+    if(count > 140) {
+      alert("Character count must be less then 140 character");
+      return;
+    } 
+    if (count === 0) {
+      alert("Cant not submit blank tweeter");
+      return;
+    } 
+      //formating varible into json 
+      const tweet = {"text":safeTextFromUser};
+      console.log(tweet);
+      $.ajax({
+        type: "POST",
+        url: "/tweets/",
+        datatype: 'json',
+        data: tweet,
+        success: ()=>{
+        // console.log("HELLO")
+          $("#tweet-text").val("")
+      loadTweets();
+        }
+      });
     
-});
+  });
+
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
 
 
