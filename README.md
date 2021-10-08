@@ -15,3 +15,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+
+## Photos
+!["Screenshot of URLs page"](https://github.com/tmeyer01/tweeter/blob/master/public/images/Screen%20Shot%202021-10-07%20at%2010.16.15%20PM.png?raw=true)
+
+!["Screenshot of Login page"](https://github.com/tmeyer01/tweeter/blob/master/public/images/Screen%20Shot%202021-10-07%20at%2010.16.03%20PM.png?raw=true)
