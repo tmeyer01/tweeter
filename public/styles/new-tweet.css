@@ -8,6 +8,7 @@
 
 .new-tweet label{
   font-weight: bold;
+  font-size: 24px;
 }
 
 .top-of-form{
@@ -28,8 +29,6 @@
   resize: none;
   
 }
-
-
 
 .bottom-of-form{
   display: flex;
@@ -52,3 +51,28 @@
   color:red
 
 }
+
+/*
+Tablets - phones 
+*/
+@media only screen and (max-width: 1023px) {
+
+  #tweets-container{
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  .new-tweet{
+    padding-top: 0px;
+  }
+
+  .new-tweet{
+    width: 100%;
+  }
+
+  #tweets-container{
+    width: 100%;
+  }
+}  

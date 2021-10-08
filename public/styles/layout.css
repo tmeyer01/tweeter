@@ -3,8 +3,6 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- 
- 
 
 html {
   box-sizing: border-box;
@@ -17,7 +15,6 @@ html {
  * Global layout stuff
  */
 
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -28,24 +25,58 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-
-
 .container{ 
-    background-color: #f4f1ec;
   display: flex;
   flex-direction: column;
   width: 90%;
-  
+}
+
+/*
+///////////////////Desktop
+*/
+@media only screen and (min-width: 1024px) {
+
+  body{
+   background-color: rgb(254, 254, 254);
+   top:120px;
+  }
+
+  .class-parent-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 150px;
+  }
+
+  .test-div{
+    position: relative;
+    width: 45%;
+  }
+
+  .main-header{
+    width: 35%;
+    margin-top: 0px;
+  }
 
 }
 
 
+/*
+Tablets - phones 
+*/
+@media only screen and (max-width: 1023px) {
 
+  .class-parent-container{
+    width: 100%;
+  }
 
-
+  .main-header{
+    width: 100%;
+    flex-grow:2;
+  }
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
